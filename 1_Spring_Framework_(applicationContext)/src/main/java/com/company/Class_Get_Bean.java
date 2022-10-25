@@ -1,10 +1,10 @@
 package com.company;
 
 
-public class TestProgram {
+public class Class_Get_Bean{
     private String name;
 
-    public TestProgram(String name) {
+    public Class_Get_Bean(String name) {
         this.name = name;
     }
 

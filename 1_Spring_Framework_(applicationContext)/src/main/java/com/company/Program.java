@@ -8,9 +8,9 @@ public class Program {
                 "applicationContext.xml"
         );
 
-        TestProgram testProgram = context.getBean("testProgram", TestProgram.class);
+        Class_Get_Bean class_get_bean = context.getBean("get_bean_from_xml", Class_Get_Bean.class);
 
-        System.out.println(testProgram.getName());
+        System.out.println(class_get_bean.getName());
 
         context.close();
     }
