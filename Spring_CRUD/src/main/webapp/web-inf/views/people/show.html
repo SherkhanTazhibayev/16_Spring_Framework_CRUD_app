@@ -6,7 +6,6 @@
     </head>
 
     <body>
-
 <!--        <a> Name: </a>-->
 <!--        <a th:text="${person.getName()}"> VALUE </a>-->
 <!--    -->
@@ -15,11 +14,13 @@
 
         <table>
             <tr>
-                <td> name: <a th:text="${person.getName()}"> VALUE </a> </td>
+                <td> <a> Name: </a>  <a th:text="${person.getName()}"> VALUE </a> </td>
             </tr>
+
             <tr>
-                <td> identification: <a th:text="${person.getId()}"> VALUE</a> </td>
+                <td> <a> identification: </a>  <a th:text="${person.getId()}"> VALUE</a></td>
             </tr>
         </table>
+
     </body>
 </html>
