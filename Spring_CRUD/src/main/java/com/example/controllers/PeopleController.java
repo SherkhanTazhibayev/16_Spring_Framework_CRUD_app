@@ -2,6 +2,7 @@ package com.example.controllers;
 
 import com.example.dao.PersonDAO;
 import com.example.models.Person;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,11 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-
-
-
 @Controller
-@RequestMapping("/people")
+@RequestMapping(path="/people")
 public class PeopleController {
 
     private final PersonDAO personDAO;
@@ -30,13 +28,13 @@ public class PeopleController {
         return "people/index";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(path="/{id}")
     public String show(@PathVariable("id") int id, Model model) {
         model.addAttribute("person", personDAO.show(id));
         return "people/show";
     }
 
-    @GetMapping("/new")
+    @GetMapping(path="/new")
     public String newPerson(@ModelAttribute("person") Person person) {
         return "people/new";
     }
@@ -51,23 +49,25 @@ public class PeopleController {
         return "redirect:/people";
     }
 
-    @GetMapping("/{id}/edit")
+    @GetMapping(path="/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
         model.addAttribute("person", personDAO.show(id));
         return "people/edit";
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping(path="/{id}")
     public String update(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult,
                          @PathVariable("id") int id) {
+        System.out.println("getErrorCount: " +bindingResult.getErrorCount());
         if (bindingResult.hasErrors()) {
             return "people/edit";
         }
+
         personDAO.update(id, person);
         return "redirect:/people";
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping(path="/{id}")
     public String delete(@PathVariable("id") int id) {
         personDAO.delete(id);
         return "redirect:/people";
