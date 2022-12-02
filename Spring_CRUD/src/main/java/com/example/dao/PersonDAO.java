@@ -24,6 +24,11 @@ public class PersonDAO {
         return jdbcTemplate.query("select * from person;", new BeanPropertyRowMapper<>(Person.class));
     }
 
+    public Person show(String email){
+        return jdbcTemplate.query("select * from Person where email=?", new Object[]{email},
+                new BeanPropertyRowMapper<>(Person.class)).stream().findAny().orElse(null);
+    }
+
     public Person show(int id) {
         return jdbcTemplate.query("select * from person where id=?", new Object[]{id}, new BeanPropertyRowMapper<>(Person.class))
                 .stream().findAny().orElse(null);
@@ -69,7 +74,10 @@ public class PersonDAO {
         for (Person person :
                 people) {
             jdbcTemplate.update("insert into person values(?, ?, ?, ?)",
-                    person.getId(), person.getName(), person.getAge(), person.getEmail());
+                    person.getId(),
+                    person.getName(),
+                    person.getAge(),
+                    person.getEmail());
         }
 
         long after = System.currentTimeMillis();
