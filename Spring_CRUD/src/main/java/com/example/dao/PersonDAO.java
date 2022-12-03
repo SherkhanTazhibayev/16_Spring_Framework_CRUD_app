@@ -35,18 +35,20 @@ public class PersonDAO {
     }
 
     public void save(Person person) {
-        jdbcTemplate.update("insert into person values(1, ?, ?, ?)",
+        jdbcTemplate.update("insert into person values(1, ?, ?, ?, ?)",
                 person.getName(),
                 person.getAge(),
-                person.getEmail()
+                person.getEmail(),
+                person.getAddress()
         );
     }
 
     public void update(int id, Person updatedPerson) {
-        jdbcTemplate.update("update person set name=?, age=?, email=? where id=?",
+        jdbcTemplate.update("update person set name=?, age=?, email=?, address=? where id=?",
                 updatedPerson.getName(),
                 updatedPerson.getAge(),
                 updatedPerson.getEmail(),
+                updatedPerson.getAddress(),
                 id
         );
     }
@@ -60,7 +62,11 @@ public class PersonDAO {
         List<Person> people = new ArrayList<>();
 
         for (int i = 0; i < 1000; i++)
-            people.add(new Person(i, "Name" + i, 30, "test" + i + "@mail.ru"));
+            people.add(new Person(i,
+                    "Name" + i,
+                    30,
+                    "test" + i + "@mail.ru",
+                    "home address"));
 
         return people;
     }

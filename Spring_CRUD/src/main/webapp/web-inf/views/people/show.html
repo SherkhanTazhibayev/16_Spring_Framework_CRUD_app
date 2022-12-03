@@ -12,7 +12,19 @@
     </tr>
 
     <tr>
+        <td><a> Age: </a> <a th:text="${person.getAge()}"> VALUE </a></td>
+    </tr>
+
+    <tr>
+        <td><a> Email: </a> <a th:text="${person.getEmail()}"> VALUE</a></td>
+    </tr>
+
+    <tr>
         <td><a> identification: </a> <a th:text="${person.getId()}"> VALUE</a></td>
+    </tr>
+
+    <tr>
+        <td><a> Address: </a> <a th:text="${person.getAddress()}"> VALUE</a></td>
     </tr>
 
     <tr>
@@ -25,6 +37,7 @@
             </form>
         </td>
     </tr>
+
 </table>
 
 <!--        <a th:href="@{/people/{id}/edit(id=${person.getId()})}">-->
