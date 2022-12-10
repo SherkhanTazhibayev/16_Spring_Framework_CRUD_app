@@ -8,7 +8,7 @@ public class Program {
                 "applicationContext.xml"
         );
 
-        Class_Get_Bean class_get_bean = context.getBean("get_bean_from_xml", Class_Get_Bean.class);
+        Bean class_get_bean = context.getBean("get_bean_from_xml", Bean.class);
 
         System.out.println(class_get_bean.getName());
 

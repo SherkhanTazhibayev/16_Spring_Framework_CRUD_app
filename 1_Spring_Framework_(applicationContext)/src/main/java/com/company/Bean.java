@@ -1,17 +1,13 @@
 package com.company;
 
-
-public class Class_Get_Bean{
+public class Bean {
     private String name;
-
-    public Class_Get_Bean(String name) {
+    public Bean(String name) {
         this.name = name;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
