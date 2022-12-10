@@ -5,8 +5,7 @@
         xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="get_bean_from_xml"
-          class="com.company.Class_Get_Bean">
+    <bean id="get_bean_from_xml" class="com.company.Bean">
         <constructor-arg value="My name is: Firstname Lastname"/>
     </bean>
 

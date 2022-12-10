@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/1_Spring_Framework_applicationContext.iml" filepath="$PROJECT_DIR$/1_Spring_Framework_applicationContext.iml" />
+      <module fileurl="file://$PROJECT_DIR$/applicationContext.iml" filepath="$PROJECT_DIR$/applicationContext.iml" />
     </modules>
   </component>
 </project>
